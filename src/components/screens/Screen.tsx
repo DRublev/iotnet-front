@@ -1,0 +1,8 @@
+import * as React from 'react';
+import { View } from 'react-native';
+
+const Screen = () => {
+  return <View>Heeey</View>;
+};
+
+export default Screen;
