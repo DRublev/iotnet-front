@@ -1,8 +1,13 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const Screen: React.FC<{ children: any }> = ({ children }) => {
-  return <View>{children}</View>;
+  return (
+    <View>
+      <Text>From parent</Text>
+      {children}
+    </View>
+  );
 };
 
 export default Screen;
