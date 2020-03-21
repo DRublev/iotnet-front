@@ -8,12 +8,13 @@ export const Card = ({children, ...props}) => {
     <NeomorphBox
       darkShadowColor={'#A6ABBD'}
       lightShadowColor={'#FAFBFF'}
+      swapShadowLevel
       style={{...styles.card}}
       {...props}>
       <LinearGradient
-        colors={['rgba(255, 255, 255, 0.08)', 'rgba(200, 200, 200, 0.1)']}
+        colors={['rgba(255, 255, 255, 0.8)', 'rgba(100, 100, 100, 0.01)']}
         start={{x: 0, y: 0}}
-        end={{x: 0.8, y: 0.8}}
+        end={{x: 0.9, y: 0.9}}
         style={{
           flex: 1,
           width: styles.card.width,
