@@ -1,16 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import Screen from './Screen';
-import * as styles from '../../styles';
+import { Card } from '../Card';
 
 export const Home = () => {
   return (
     <Screen>
-      <View>
-        <View style={styles.card}>
-          <Text>Yep, yep</Text>
-        </View>
-      </View>
+      <Card>
+        <Text>Yep yep</Text>
+      </Card>
     </Screen>
   );
 };

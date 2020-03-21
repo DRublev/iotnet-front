@@ -7,22 +7,32 @@ export const colors = {
 };
 
 export const gradients = {
-  orange2Yellow: `linear-gradient(184.26deg, ${colors.orange} 20.53%, ${
-    colors.yellow
-    } 79.85%)`,
-  grey2White: 'linear-gradient(347.02deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #EBECF0'
+  orange2Yellow: `linear-gradient(184.26deg, ${colors.orange} 20.53%, ${colors.yellow} 79.85%)`,
+  grey2White:
+    'linear-gradient(347.02deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #EBECF0',
 };
 
-const shadows = {
-  outer: {
-    shadowColor: '#A6ABBD',
-    shadowOffset: {
-      width: 0,
-      height: 3
+export const shadows = {
+  outer: [
+    {
+      color: '#A6ABBD',
+      offset: {
+        width: 10,
+        height: 10,
+      },
+      radius: 20,
+      opacity: 1.0,
     },
-    shadowRadius: 5,
-    shadowOpacity: 1.0
-  }, //10px 10px 20px #A6ABBD, -10px -10px 20px #FAFBF
+    {
+      color: '#FAFBF',
+      offset: {
+        width: -10,
+        height: -10,
+      },
+      radius: 20,
+      opacity: 1.0,
+    },
+  ], //10px 10px 20px #A6ABBD, -10px -10px 20px #FAFBF
   inner: 'inset 5px 5px 10px #A6ABBD, inset -5px -5px 10px #FAFBFF',
 };
 
@@ -30,12 +40,12 @@ const fonts = {
   main: {
     fontFamily: 'Roboto sans-serif',
     fontWeight: 'normal',
-  }
+  },
 };
 
 export const borders = {
-  rounded: { borderRadius: 47 },
-  main: { border: '1px solid rgba(255, 255, 255, 0.4)' },
+  rounded: {borderRadius: 47},
+  main: {border: '1px solid rgba(255, 255, 255, 0.4)'},
 };
 
 export const button = {
@@ -61,7 +71,7 @@ export const card = {
   shadowColor: colors.yellow,
   shadowOffset: {
     width: 10,
-    height: 3
+    height: 3,
   },
   elevation: 1,
   shadowRadius: 20,
