@@ -13,26 +13,10 @@ export const gradients = {
 };
 
 export const shadows = {
-  outer: [
-    {
-      color: '#000',
-      offset: {
-        width: 10,
-        height: 10,
-      },
-      radius: 5,
-      opacity: 1.0,
-    },
-    {
-      color: '#fff',
-      offset: {
-        width: -10,
-        height: -10,
-      },
-      radius: 20,
-      opacity: 1.0,
-    },
-  ], //10px 10px 20px #A6ABBD, -10px -10px 20px #FAFBF
+  outer: {
+    shadowRadius: 5,
+    shadowOpacity: 1.0,
+  }, //10px 10px 20px #A6ABBD, -10px -10px 20px #FAFBFF
   inner: 'inset 5px 5px 10px #A6ABBD, inset -5px -5px 10px #FAFBFF',
 };
 
@@ -44,7 +28,7 @@ const fonts = {
 };
 
 export const borders = {
-  rounded: {borderRadius: 47},
+  rounded: {borderRadius: 20},
   main: {border: '1px solid rgba(255, 255, 255, 0.4)'},
 };
 
@@ -68,19 +52,19 @@ export const inputs = {
 };
 
 export const card = {
-  shadowColor: colors.yellow,
-  shadowOffset: {
-    width: 10,
-    height: 3,
-  },
-  elevation: 1,
   shadowRadius: 20,
   shadowOpacity: 1.0,
+  backgroundColor: '#EBECF0',
+  width: 100,
+  height: 100,
   padding: 1,
+  alignItems: 'center',
+  ...borders.rounded
 };
 
 export const container = {
   backgroundColor: '#EBECF0',
   padding: 2,
-  height: 100,
+  height: 1000,
+  alignItems: 'center',
 };
