@@ -52,8 +52,8 @@ export const inputs = {
 };
 
 export const card = {
-  shadowRadius: 20,
-  shadowOpacity: 1.0,
+  shadowRadius: 4,
+  shadowOpacity: 0.25,
   backgroundColor: '#EBECF0',
   width: 100,
   height: 100,
@@ -63,7 +63,6 @@ export const card = {
 };
 
 export const container = {
-  backgroundColor: '#EBECF0',
   padding: 2,
   height: 1000,
   alignItems: 'center',
