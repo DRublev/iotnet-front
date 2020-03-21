@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Screen from './Screen';
 import { Card } from '../Card';
+import Screen from './Screen';
 
 export const Home = () => {
   return (
     <Screen>
       <Card>
-        <Text>Yep yep</Text>
+        <Text>Yep, yep....</Text>
       </Card>
     </Screen>
   );

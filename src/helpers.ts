@@ -1,12 +1,14 @@
-export const partionByKeys = (keys: Array<string>, obj: Object): [Object, Object] => {
-  let passed = {};
-  let failed = {};
+export const partitionByKeys = (keys, obj) => {
+  let pass = {};
+  let fail = {};
 
-  Object.keys(keys).forEach((key) =>
-      keys.includes(key)
-          ? (passed[ key ] = obj[ key ])
-          : (failed[ key ] = obj[ key ])
-  );
+  for (const key of Object.keys(obj)) {
+    if (keys.includes(key)) {
+      pass[key] = obj[key];
+    } else {
+      fail[key] = obj[key];
+    }
+  }
 
-  return [passed, failed];
+  return [pass, fail];
 };

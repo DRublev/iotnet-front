@@ -1,6 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
-import {partionByKeys} from '../../helpers';
+import * as _ from 'lodash';
+import {BoxShadow} from 'react-native-shadow';
+import {partitionByKeys} from '../../helpers';
 
 interface IOffset {
   width: number;
@@ -30,37 +32,43 @@ const innerStyleKeys = [
   'minHeight',
 ];
 
-export const MultipleShadowsView = (
-  level,
-  shadows: Array<IShadow>,
-  children: any,
-  style: Object,
-  ...props
-) => {
+const MultipleShadowsView = ({level, shadows, children, style, ...props}) => {
   const _level: number = level || 0;
-  const shadow = shadows.shift();
+    const shadow: IShadow = _.head(shadows) || {};
+    
   const [innerStyle, outerStyle] = style
-    ? partionByKeys(innerStyleKeys, style)
-    : [{}, {}];
-
+    ? partitionByKeys(innerStyleKeys, style)
+        : [ {}, {} ];
+    console.log(shadow.offset.width);
   return (
-    <View
+    <BoxShadow
       {...props}
+      setting={{
+        width: 40,
+        height: 40,
+        color: '#ff0000',
+        opacity: shadow.opacity,
+        x: 10,
+        y: 10,
+      }}
       style={{
-        shadowColor: shadow.color,
-        shadowOffset: shadow.offset,
-        shadowOpacity: shadow.opacity,
-        shadowRadius: shadow.radius,
-        ...(level === 0 ? outerStyle : {}),
+        width: 20,
+        marginLeft: 10,
+        ...(_level === 0 ? outerStyle : {}),
         ...(shadows.length === 1 ? innerStyle : {}),
       }}>
       {shadows.length === 1 ? (
         children
       ) : (
-        <MultipleShadowsView level={_level + 1} shadows={shadows} style={style}>
+        <MultipleShadowsView
+          level={_level + 1}
+          shadows={_.tail(shadows)}
+          style={style}>
           {children}
         </MultipleShadowsView>
       )}
-    </View>
+    </BoxShadow>
   );
 };
+
+export default MultipleShadowsView;

@@ -15,16 +15,16 @@ export const gradients = {
 export const shadows = {
   outer: [
     {
-      color: '#A6ABBD',
+      color: '#000',
       offset: {
         width: 10,
         height: 10,
       },
-      radius: 20,
+      radius: 5,
       opacity: 1.0,
     },
     {
-      color: '#FAFBF',
+      color: '#fff',
       offset: {
         width: -10,
         height: -10,
@@ -80,7 +80,7 @@ export const card = {
 };
 
 export const container = {
-  backgroundColor: colors.grey,
+  backgroundColor: '#EBECF0',
   padding: 2,
   height: 100,
 };
