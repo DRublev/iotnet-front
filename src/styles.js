@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 export const colors = {
   grey: '#EBECF0',
   orange: '#F15F4E',
@@ -53,17 +55,18 @@ export const inputs = {
 
 export const card = {
   shadowRadius: 4,
-  shadowOpacity: 0.25,
+  shadowOpacity: 0.8,
   backgroundColor: '#EBECF0',
-  width: 100,
-  height: 100,
-  padding: 1,
+  width: Math.round(Dimensions.get('window').width) * 0.5,
+  height: Math.round(Dimensions.get('window').width) * 0.5,
+  padding: 2,
   alignItems: 'center',
-  ...borders.rounded
+  ...borders.rounded,
 };
 
 export const container = {
   padding: 2,
-  height: 1000,
+  height: Math.round(Dimensions.get('window').height),
+  backgroundColor: '#EBECF0',
   alignItems: 'center',
 };

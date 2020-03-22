@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Card } from '../Card';
+import { Card } from '../UI/Card';
 import Screen from './Screen';
 
 export const Home = () => {

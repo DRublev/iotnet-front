@@ -5,7 +5,6 @@ import * as styles from '../../styles';
 const Screen: React.FC<{ children: any }> = ({ children }) => {
   return (
     <View style={style.container}>
-      <Text>From parent</Text>
       {children}
     </View>
   );
